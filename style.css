@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'digital';
+    src: url("digital-7.ttf");
+}
+
+.main {
+    font-family: 'digital';
+    font-size: 100px;
+    text-align: center;
+}
+
+.btnStart {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    background-color: lightgreen;
+    width: 250px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-25%, -50%);
+    transition-duration: 0.4s;
+}
+
+.btnReset {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    background-color: orange;
+    width: 250px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.4s;
+}
+
+.btnStop {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    background-color: orangered;
+    width: 250px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-75%, -50%);
+    transition-duration: 0.4s;
+}
+
+.btnStart:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btnStop:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btnReset:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

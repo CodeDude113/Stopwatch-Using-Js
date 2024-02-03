@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p id="main" class="main"></p>
+    <script>
+      var sec = 0;
+      var min = 0;
+      var hr = 0;
+      var displaySec = "00";
+      var displayMin = "00";
+      var displayHr = "00";
+      var main = displayHr + ":" + displayMin + ":" + displaySec;
+      var stopwatchOn = false;
+
+      function displayer() {
+        if (sec === 60) {
+            sec = 0;
+            min++
+        }
+        if (min === 60) {
+            min = 0;
+            hr++
+        }
+        if (sec >= 10) {
+            displaySec = sec;
+        } else {
+            displaySec = '0'+ sec;
+        }
+        if (min >= 10) {
+            displayMin = min;
+        } else {
+            displayMin = '0'+ min
+        }
+        if (hr >= 10) {
+            displayHr = hr;
+        } else {
+            displayHr = '0'+ hr;
+        }
+        main = displayHr + ":" + displayMin + ":" + displaySec;
+        document.getElementById("main").innerHTML = main;
+      }
+
+      displayer();
+
+      function sleep(ms = 0) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      async function secCounter() {
+        while (stopwatchOn === true) {
+          sec++;
+          displayer();
+          await sleep(1000);
+        }
+      }
+
+      async function btnStart() {
+        stopwatchOn = true;
+        await sleep(1000);
+        secCounter();
+      }
+
+      function btnStop() {
+        stopwatchOn = false;
+      }
+
+      function btnReset() {
+        btnStop();
+        sec = 0;
+        min = 0;
+        hr = 0;
+        displaySec = "00";
+        displayMin = "00";
+        displayHr = "00";
+        main = displayHr + ":" + displayMin + ":" + displaySec;
+        displayer()
+      }
+    </script>
+    <button class="btnStart" onclick="btnStart()">Start</button>
+    <button class="btnReset" onclick="btnReset()">Reset</button>
+    <button class="btnStop" onclick="btnStop()">Stop</button>
+  </body>
+</html>
